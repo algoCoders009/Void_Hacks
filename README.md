@@ -7,12 +7,14 @@ This desktop application gives you an analysis on the whether you have disease o
 The application also has a section which displays a threat level of a particular disease all over the country state wise.
 This data is beneficial when assigning medical resources to a state and determining their medical needs.
 
-Steps to use the application: 
-Run the API by executing the command python api.py in the console.
+Steps to use the application:
+1) Download all required files
 
-Flask server will be created which can access the ML Model.
+2) Run the API by executing the command python api.py in the console.
 
-Access the Web UI (Dashboard) and proceed to use.
+3) Flask server will be created which can access the ML Model.
+
+4) Access the Web UI (Dashboard) and proceed to use.
 
 In the Web UI Page, a prediction model of diabetes is set up which can predict whether a person has or not based on the 
 input values.
@@ -20,8 +22,8 @@ input values.
 Alternatively, enter the server sddress http://127.0.0.1/12345 in your browser to access it.
 The output will be in the form of binary (0 or 1)
 
-1 - Person has
-0 - Person does not have
+1 - Person has said disease
+0 - Person does not have disease
 
 The Flagged map of a flu breakout and its descriptive analysis can be accessed on the following page :
 https://www.google.com/maps/d/u/0/embed?mid=1ECmLbauOoxGxYuTTuEGcHWVICDSaXgML
