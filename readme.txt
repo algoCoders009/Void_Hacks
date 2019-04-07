@@ -7,6 +7,8 @@ The application also has a section which displays a threat level of a particular
 This data is beneficial when assigning medical resources to a state and determining their medical needs.
 
 Steps to use the application: 
+Download All required files
+
 Run the API by executing the command python api.py in the console.
 
 Flask server will be created which can access the ML Model.
@@ -18,5 +20,6 @@ input values.
 The output will be in the form of binary (0 or 1)
 
 1 - Person has
-2 - Person does not have
+0 - Person does not have
+
   
