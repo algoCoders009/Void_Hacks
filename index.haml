@@ -1,0 +1,37 @@
+/ Begin container
+
+.container
+  .container_inner
+    %h1 Kickass Pure CSS 3D Dashboard
+    %h2 
+      Created by
+      %a{:href => ''} @jcoulterdesign
+    %br
+    .tiles
+      -(1..4).each do
+        .tiles_tile
+          .tiles_tile__front
+            %h1 
+              %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dash.png'}
+              Current Orders
+            %p Your current orders status
+          .tiles_tile__back
+            .stats
+              %h3 Orders
+              %span 234
+              %h3 Failed
+              %span.red 9 items
+              %h3 Successful
+              %span.green 23 items
+            .info
+              %h1 Orders
+            .graphback
+              %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/gback.png'}
+            .graphmid
+              %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/gmid.png'}
+            .graphfront
+              %img{:src => 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/gfront.png'}
+          .tiles_tile__left
+          .tiles_tile__right
+          .tiles_tile__top
+          .tiles_tile__bottom

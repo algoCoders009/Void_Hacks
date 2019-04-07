@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>AKSHAT</title>
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+    </head>
+<body>
+    <form id="test">
+    Age: 
+        <input type = "number" name = "age" />
+        <br><br>
+        
+    Glucose:
+        <input type = "number" name = "glucose" />
+        <br><br>
+        
+    BMI:
+        <input type = "number" name = "bmi" /> <br><br>
+        
+    BP:
+        <input type = "number" name = "bp" /> <br>
+        <input type = "submit" />  
+    </form>
+    <div id="qwer"></div>
+    <script type="application/javascript">
+       (function() {
+	function toJSONString( form ) {
+		var obj = {};
+		var elements = form.querySelectorAll( "input, select, textarea" );
+		for( var i = 0; i < elements.length; ++i ) {
+			var element = elements[i];
+			var name = element.name;
+			var value = element.value;
+
+			if( name ) {
+				obj[ name ] = value;
+			}
+		}
+
+		return JSON.stringify( obj );
+	}
+
+	document.addEventListener( "DOMContentLoaded", function() {
+		var form = document.getElementById( "test" );
+		form.addEventListener( "submit", function( e ) {
+			e.preventDefault();
+			var json = "["+toJSONString( this )+"]";
+            console.log(json);
+			$.ajax({
+            type : "POST",
+            url : "http://127.0.0.1:12345/predict",
+            data : json,
+            success : function(response){
+                $("#qwer").html(response.prediction);
+            },
+            dataType : "json",
+            contentType : "application/json"
+        });
+
+		}, false);
+
+	});
+
+})();
+    </script>
+</body>
+
+</html>
